@@ -1,6 +1,6 @@
 console.log("Hello World!");
 
-/* Create a new functikon named getComputerChoice
+/* Create a new function named getComputerChoice
 - Randomly return one of the following string values: "rock", "papers", "scissors".
 */
 function getComputerChoice() {
@@ -18,7 +18,17 @@ function getComputerChoice() {
         let hand = "scissors";
         return hand;
     }
-    console.log(hand);
 }
-
 console.log(getComputerChoice());
+
+/* Create a new function named getHumanChoice
+- This function will return one of the valid choices depending on what the user inputs
+*/
+let getHumanChoice = () => {
+    let input = prompt("Input rock/paper/scissors");
+    return input;
+};
+
+let userHand = getHumanChoice();
+console.log(userHand);
+
