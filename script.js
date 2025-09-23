@@ -6,7 +6,19 @@ console.log("Hello World!");
 function getComputerChoice() {
     // toFixed function to round off numbers to 2 decimal places
     let handNumbered = Math.random().toFixed(2);
-    console.log(handNumbered);
+    //console.log(handNumbered);
+
+    if (handNumbered <= 0.33) {
+        let hand = "rock";
+        return hand;
+    } else if (handNumbered > 0.33 && handNumbered <= 0.67) {
+        let hand = "paper";
+        return hand;
+    } else {
+        let hand = "scissors";
+        return hand;
+    }
+    console.log(hand);
 }
 
-getComputerChoice();
+console.log(getComputerChoice());
