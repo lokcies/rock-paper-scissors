@@ -32,3 +32,7 @@ let getHumanChoice = () => {
 let userHand = getHumanChoice();
 console.log(userHand);
 
+// Declare the players score variables 
+let humanScore = 0;
+let computerScore = 0;
+
