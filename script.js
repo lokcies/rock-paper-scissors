@@ -4,6 +4,8 @@ console.log("Hello World!");
 - Randomly return one of the following string values: "rock", "papers", "scissors".
 */
 function getComputerChoice() {
+
+    /*
     // toFixed function to round off numbers to 2 decimal places
     let handNumbered = Math.random().toFixed(2);
     //console.log(handNumbered);
@@ -17,6 +19,19 @@ function getComputerChoice() {
     } else {
         let hand = "scissors";
         return hand;
+    } */
+
+    let handValue = Math.floor((Math.random()*3)+1)
+    console.log(handValue) //test output
+    if (handValue <= 1) {
+        let cpuHand = "rock";
+        return cpuHand;
+    } else if (handValue > 1 && handValue <= 2) {
+        let cpuHand = "paper";
+        return cpuHand;
+    } else {
+        let cpuHand = "scissors";
+        return cpuHand;
     }
 }
 console.log(getComputerChoice());
@@ -36,3 +51,7 @@ console.log(userHand);
 let humanScore = 0;
 let computerScore = 0;
 
+/*
+let testOneToThree = Math.floor((Math.random()*3)+1);
+console.log(testOneToThree);
+*/
