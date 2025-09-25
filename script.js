@@ -34,7 +34,6 @@ function getComputerChoice() {
         return cpuHand;
     }
 }
-console.log(getComputerChoice());
 
 /* Create a new function named getHumanChoice
 - This function will return one of the valid choices depending on what the user inputs
@@ -47,11 +46,54 @@ let getHumanChoice = () => {
 let userHand = getHumanChoice();
 console.log(userHand);
 
-// Declare the players score variables 
+// Declare the players score variables and initialize score to 0
 let humanScore = 0;
 let computerScore = 0;
 
-/*
-let testOneToThree = Math.floor((Math.random()*3)+1);
-console.log(testOneToThree);
-*/
+// Create a function named playRound with humanChoice and computerChoice as parameters
+let playRound = (humanChoice, computerChoice) => {
+    // Ignore this segment, only used for testing the conditions
+    /*
+    computerChoice = "rock"
+    computerChoice = "paper"
+    computerChoice = "scissors"
+    */
+
+    if (humanChoice.toLowerCase() === computerChoice) {
+        console.log("Human's hand: " + humanChoice);
+        console.log("CPU's hand: " + computerChoice);
+        console.log("This round is a tie");
+    } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "paper") {
+        console.log("Human's hand: " + humanChoice);
+        console.log("CPU's hand: " + computerChoice);
+        console.log("CPU wins!");
+        computerScore++;
+    } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "scissors") {
+        console.log("Human's hand: " + humanChoice);
+        console.log("CPU's hand: " + computerChoice);
+        console.log("Human wins!");
+        humanScore++;
+    } else if (humanChoice.toLowerCase() === "paper" && computerChoice === "rock") {
+        console.log("Human's hand: " + humanChoice);
+        console.log("CPU's hand: " + computerChoice);
+        console.log("Human wins!");
+        humanScore++;
+    } else if (humanChoice.toLowerCase() === "paper" && computerChoice === "scissors") {
+        console.log("Human's hand: " + humanChoice);
+        console.log("CPU's hand: " + computerChoice);
+        console.log("CPU wins!");
+        computerScore++;
+    } else if (humanChoice.toLowerCase() === "scissors" && computerChoice === "rock") {
+        console.log("Human's hand: " + humanChoice);
+        console.log("CPU's hand: " + computerChoice);
+        console.log("CPU wins!");
+        computerScore++;
+    } else { // Human is scissors and CPU is paper
+        console.log("Human's hand: " + humanChoice);
+        console.log("CPU's hand: " + computerChoice);
+        console.log("Human wins!");
+        humanScore++;
+    }
+};
+
+playRound(userHand, getComputerChoice());
