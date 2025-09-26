@@ -1,4 +1,4 @@
-// console.log("Hello World!");
+console.log("Hello World!");
 
 /* Create a new function named getComputerChoice
 - Randomly return one of the following string values: "rock", "papers", "scissors".
@@ -22,7 +22,7 @@ function getComputerChoice() {
     } */
 
     let handValue = Math.floor((Math.random()*3)+1)
-    // console.log(handValue) //test output
+    console.log(handValue) //test output
     if (handValue <= 1) {
         let cpuHand = "rock";
         return cpuHand;
@@ -44,6 +44,7 @@ let getHumanChoice = () => {
 };
 
 let userHand = getHumanChoice();
+console.log(userHand);
 
 // Declare the players score variables and initialize score to 0
 let humanScore = 0;
@@ -62,94 +63,37 @@ let playRound = (humanChoice, computerChoice) => {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("This round is a tie");
-
-        console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);        
     } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "paper") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("CPU wins!");
         computerScore++;
-
-        console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        // return computerScore;
     } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "scissors") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("Human wins!");
         humanScore++;
-
-        console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        // return humanScore;
     } else if (humanChoice.toLowerCase() === "paper" && computerChoice === "rock") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("Human wins!");
         humanScore++;
-
-        console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        // return humanScore;
     } else if (humanChoice.toLowerCase() === "paper" && computerChoice === "scissors") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("CPU wins!");
         computerScore++;
-
-        console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        // return computerScore;
     } else if (humanChoice.toLowerCase() === "scissors" && computerChoice === "rock") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("CPU wins!");
         computerScore++;
-
-        console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        // return computerScore;
     } else { // Human is scissors and CPU is paper
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("Human wins!");
         humanScore++;
-
-        console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        // return humanScore;
     }
 };
 
-//playRound(userHand, getComputerChoice());
-
-/*
-Write a function called playGame that calls playRound to:
-- play 5 rounds
-- keeps track of the scores
- - declares a winner at the end
-*/
-
-function playGame (humanScore, computerScore) {
-    //round = playRound(userHand, getComputerChoice());
-
-    for (let i=0; i<5; i++) {
-        console.log("\nRound number: " + (parseInt(i)+1));
-        playRound(userHand, getComputerChoice());
-        /*
-        console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        */
-    }
-}
-
-playGame(humanScore, computerScore);
+playRound(userHand, getComputerChoice());
