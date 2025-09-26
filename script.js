@@ -43,7 +43,7 @@ let getHumanChoice = () => {
     return input;
 };
 
-let userHand = getHumanChoice();
+// let userHand = getHumanChoice();
 
 // Declare the players score variables and initialize score to 0
 let humanScore = 0;
@@ -63,18 +63,18 @@ let playRound = (humanChoice, computerChoice) => {
         console.log("CPU's hand: " + computerChoice);
         console.log("This round is a tie");
 
-        console.log("*******SCORE*******")
+        /* console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);   
+        console.log("Computer Score: " + computerScore);    */
     } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "paper") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("CPU wins!");
         computerScore++;
 
-        console.log("*******SCORE*******")
+        /* console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
+        console.log("Computer Score: " + computerScore); */
         // return computerScore;
     } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "scissors") {
         console.log("Human's hand: " + humanChoice);
@@ -82,9 +82,9 @@ let playRound = (humanChoice, computerChoice) => {
         console.log("Human wins!");
         humanScore++;
 
-        console.log("*******SCORE*******")
+        /* console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
+        console.log("Computer Score: " + computerScore); */
         // return humanScore;
     } else if (humanChoice.toLowerCase() === "paper" && computerChoice === "rock") {
         console.log("Human's hand: " + humanChoice);
@@ -92,19 +92,19 @@ let playRound = (humanChoice, computerChoice) => {
         console.log("Human wins!");
         humanScore++;
 
-        console.log("*******SCORE*******")
+        /* console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        return humanScore;
+        console.log("Computer Score: " + computerScore); */
+        // return humanScore;
     } else if (humanChoice.toLowerCase() === "paper" && computerChoice === "scissors") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
         console.log("CPU wins!");
         computerScore++;
 
-        console.log("*******SCORE*******")
+        /* console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
+        console.log("Computer Score: " + computerScore); */
         // return computerScore;
     } else if (humanChoice.toLowerCase() === "scissors" && computerChoice === "rock") {
         console.log("Human's hand: " + humanChoice);
@@ -112,9 +112,9 @@ let playRound = (humanChoice, computerChoice) => {
         console.log("CPU wins!");
         computerScore++;
 
-        console.log("*******SCORE*******")
+        /* console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
+        console.log("Computer Score: " + computerScore); */
         // return computerScore;
     } else { // Human is scissors and CPU is paper
         console.log("Human's hand: " + humanChoice);
@@ -122,9 +122,9 @@ let playRound = (humanChoice, computerChoice) => {
         console.log("Human wins!");
         humanScore++;
 
-        console.log("*******SCORE*******")
+        /* console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
+        console.log("Computer Score: " + computerScore); */
         // return humanScore;
     }
 };
@@ -141,15 +141,19 @@ Write a function called playGame that calls playRound to:
 function playGame () {
     //round = playRound(userHand, getComputerChoice());
 
+    // let winner = "";
+
     for (let i=0; i<5; i++) {
+        userHand = getHumanChoice();
+        cpuHand = getComputerChoice();
         console.log("\nRound number: " + (parseInt(i)+1));
-        playRound(userHand, getComputerChoice());
-        
-        /* console.log("*******SCORE*******")
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore); */
-        
+        playRound(userHand, cpuHand); 
     }
+
+    console.log("\n\n*******FINAL SCORE*******")
+    console.log("Human:  " + humanScore);
+    console.log("Computer: " + computerScore);
+
 }
 
 playGame();
