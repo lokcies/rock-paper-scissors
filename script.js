@@ -29,7 +29,7 @@ function getComputerChoice() {
     } else if (handValue > 1 && handValue <= 2) {
         let cpuHand = "paper";
         return cpuHand;
-    } else {
+    } else { // for numbers other than 1 & 2. In this case, it should be 3.
         let cpuHand = "scissors";
         return cpuHand;
     }
@@ -141,8 +141,6 @@ Write a function called playGame that calls playRound to:
 function playGame () {
     //round = playRound(userHand, getComputerChoice());
 
-    let winner = "";
-
     for (let i=0; i<5; i++) {
         userHand = getHumanChoice();
         cpuHand = getComputerChoice();
@@ -150,15 +148,17 @@ function playGame () {
         playRound(userHand, cpuHand); 
     }
 
-    // Determining final winner
-    if (humanScore === computerScore) {
-
-    }
-
     console.log("\n\n*******FINAL SCORE*******")
     console.log("Human:  " + humanScore);
     console.log("Computer: " + computerScore);
-
+    // Determining final winner of the game
+    if (humanScore === computerScore) {
+        console.log("It's a TIE!");
+    } else if (humanScore > computerScore) {
+        console.log("Human wins the game!");
+    } else {
+        console.log("Computer wins the round")
+    }
 }
 
 playGame();
