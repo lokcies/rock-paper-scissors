@@ -141,13 +141,18 @@ Write a function called playGame that calls playRound to:
 function playGame () {
     //round = playRound(userHand, getComputerChoice());
 
-    // let winner = "";
+    let winner = "";
 
     for (let i=0; i<5; i++) {
         userHand = getHumanChoice();
         cpuHand = getComputerChoice();
         console.log("\nRound number: " + (parseInt(i)+1));
         playRound(userHand, cpuHand); 
+    }
+
+    // Determining final winner
+    if (humanScore === computerScore) {
+
     }
 
     console.log("\n\n*******FINAL SCORE*******")
