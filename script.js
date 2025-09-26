@@ -65,7 +65,7 @@ let playRound = (humanChoice, computerChoice) => {
 
         console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);        
+        console.log("Computer Score: " + computerScore);   
     } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "paper") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
@@ -95,7 +95,7 @@ let playRound = (humanChoice, computerChoice) => {
         console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
         console.log("Computer Score: " + computerScore);
-        // return humanScore;
+        return humanScore;
     } else if (humanChoice.toLowerCase() === "paper" && computerChoice === "scissors") {
         console.log("Human's hand: " + humanChoice);
         console.log("CPU's hand: " + computerChoice);
@@ -138,18 +138,18 @@ Write a function called playGame that calls playRound to:
  - declares a winner at the end
 */
 
-function playGame (humanScore, computerScore) {
+function playGame () {
     //round = playRound(userHand, getComputerChoice());
 
     for (let i=0; i<5; i++) {
         console.log("\nRound number: " + (parseInt(i)+1));
         playRound(userHand, getComputerChoice());
-        /*
-        console.log("*******SCORE*******")
+        
+        /* console.log("*******SCORE*******")
         console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        */
+        console.log("Computer Score: " + computerScore); */
+        
     }
 }
 
-playGame(humanScore, computerScore);
+playGame();
